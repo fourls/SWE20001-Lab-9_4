@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 </head>
-<body>           
+<body>
+    <p>
+        Hello from HTML.
+        <br/>
+        <?php echo "Hello from PHP " phpversion(); ?>
+    </p>
 </body>
 </html>
 
