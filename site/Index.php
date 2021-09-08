@@ -6,7 +6,17 @@
     <p>
         Hello from HTML.
         <br/>
-        <?php echo "Hello from PHP " phpversion(); ?>
+        <?php echo "Hello from PHP ".phpversion()."!"; ?>
+        <br/>
+        <?php
+include_once("db.php");
+
+if($conn) {
+    echo "Database connected!";
+} else {
+    echo "Database couldn't connect.";
+}
+        ?>
     </p>
 </body>
 </html>
