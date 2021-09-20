@@ -4,7 +4,7 @@
 </head>
 <body>
     <p>
-        Hello from HTML.
+        Hey there! from HTML.
         <br/>
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
