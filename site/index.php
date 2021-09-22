@@ -9,15 +9,18 @@
         Jack. K
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
-        <?php
-include_once("db.php");
+<?php
+    include_once("db.php");
 
-if($conn) {
-    echo "Database connected!";
-} else {
-    echo "Database couldn't connect .";
-}
-        ?>
+    if($conn) {
+       echo "Database connected!";
+    } else {
+        echo "Database couldn't connect .";
+    }
+
+    <p><a href='addform.php'>Add</a></p>
+
+?>
     </p>
 </body>
 </html>
