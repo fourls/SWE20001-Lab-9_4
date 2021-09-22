@@ -6,6 +6,12 @@
  <meta name="keywords" content="PHP" />
  <title>Add Sales</title>
 </head>
+
+<!--
+Just copied a baseline from one of my assignments - Ryan
+
+-->
+
 <body>
 <h1>Addform.php</h1>
 <form action = "Addprocess.php" method = "post" >
