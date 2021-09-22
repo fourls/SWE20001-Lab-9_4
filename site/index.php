@@ -6,7 +6,7 @@
     <p>
         Hey you there! from HTML.
         <br/>
-        Jack. j
+        Jack. K
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
         <?php
