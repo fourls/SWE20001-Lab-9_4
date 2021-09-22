@@ -9,6 +9,7 @@
         Jack. K
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
+    </p>
 <?php
     include_once("db.php");
 
@@ -17,11 +18,9 @@
     } else {
         echo "Database couldn't connect .";
     }
-
-    <p><a href='addform.php'>Add</a></p>
-
 ?>
-    </p>
+<p><a href='addform.php'>Add</a></p>
+
 </body>
 </html>
 
