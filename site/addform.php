@@ -4,7 +4,7 @@
  <meta charset="utf-8" />
  <meta name="description" content="Sprint 1" />
  <meta name="keywords" content="PHP" />
- <title>Job Vacancy</title>
+ <title>Add Sales</title>
 </head>
 <body>
 <h1>Addform.php</h1>
