@@ -23,24 +23,25 @@ $id = $_POST["product_id"];
 $id_exists_stmt = $conn->prepare("SELECT count(*) AS count FROM products WHERE product_id = ?");
 $id_exists_stmt->bind_param("i", $id);
 
-$result = $id_exists_stmt->execute();
+$exists_ok = $id_exists_stmt->execute();
 
-if(!$result) {
+if(!$exists_ok) {
     fail("Database error.");
 } else {
-    $fetch = $result->fetch_assoc();
+    $id_exists_stmt->bind_result($count);
+    $id_exists_stmt->fetch();
 
-    if($fetch["count"] == 0) {
+    if($count == 0) {
         fail("No product exists with that ID.");
     }
 }
 
-$stmt = $conn->prepare("UPDATE PRODUCTS SET product_name = ?, description = ?, quantity = ? WHERE product_id = ?");
-$stmt->bind_param("ssii",$_POST["product_name"], $_POST["description"], $_POST["quantity"], id);
+$update_stmt = $conn->prepare("UPDATE PRODUCTS SET product_name = ?, description = ?, quantity = ? WHERE product_id = ?");
+$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["description"], $_POST["quantity"], id);
 
-$result = $stmt->execute();
+$update_ok = $update_stmt->execute();
 
-if(!$result) {
+if(!$update_ok) {
     fail("Please provide valid values.");
 } else {
     header("Location: show.php");
