@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php include 'commits/header.inc'; ?>  <!-- use these in each page to make it easier to have consistency across pages --> 
 </head>
 <body>
+    <?php include 'commits/menu.inc';?>
     <p>
-        Hey you there you! from HTML.
-        <br/>
-        Jack. K
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
     </p>
@@ -21,6 +20,7 @@
 ?>
 <p><a href='addform.php'>Add</a></p>
 
+<?php include 'commits/footer';?>
 </body>
 </html>
 
