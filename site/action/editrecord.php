@@ -20,7 +20,7 @@ $id = $_POST["product_id"];
 $id_exists_stmt = $conn->prepare("SELECT count(*) AS count FROM products WHERE product_id = ?");
 $id_exists_stmt->bind_param("i", $id);
 
-$result = $stmt->execute();
+$result = $id_exists_stmt->execute();
 
 if(!$result) {
     fail("Database error.");
