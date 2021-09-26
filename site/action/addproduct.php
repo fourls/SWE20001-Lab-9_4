@@ -11,13 +11,13 @@ if(!isset($_POST["product_id"]))
     fail("Please provide a product ID.");
 if(!isset($_POST["product_name"]))
     fail("Please provide a product name.");
-if(!isset($_POST["description"]))
+if(!isset($_POST["product_description"]))
     fail("Please provide a description.");
-if(!isset($_POST["quantity"]))
+if(!isset($_POST["product_quantity"]))
     fail("Please provide a quantity.");
 
-$stmt = $conn->prepare("INSERT INTO products (product_id, product_name, description, quantity) VALUES (?,?,?,?)");
-$stmt->bind_param("issi",$_POST["product_id"],$_POST["product_name"], $_POST["description"], $_POST["quantity"]);
+$stmt = $conn->prepare("INSERT INTO product (product_id, product_name, product_description, product_quantity) VALUES (?,?,?,?)");
+$stmt->bind_param("issi",$_POST["product_id"],$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"]);
 
 $result = $stmt->execute();
 

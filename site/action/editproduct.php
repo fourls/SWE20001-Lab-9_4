@@ -10,10 +10,10 @@ if(!isset($_POST["product_id"]))
     fail("Please provide a product ID.");
 if(!isset($_POST["product_name"]))
     fail("Please provide a product name.");
-if(!isset($_POST["description"]))
-    fail("Please provide a description.");
-if(!isset($_POST["quantity"]))
-    fail("Please provide a quantity.");
+if(!isset($_POST["product_description"]))
+    fail("Please provide a product description.");
+if(!isset($_POST["product_quantity"]))
+    fail("Please provide a product quantity.");
     
 $id = $_POST["product_id"];
 
@@ -35,8 +35,8 @@ if(!$exists_ok) {
 
 $id_exists_stmt->close();
 
-$update_stmt = $conn->prepare("UPDATE PRODUCTS SET product_name = ?, description = ?, quantity = ? WHERE product_id = ?");
-$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["description"], $_POST["quantity"], $id);
+$update_stmt = $conn->prepare("UPDATE product SET product_name = ?, product_description = ?, product_quantity = ? WHERE product_id = ?");
+$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $id);
 
 $update_ok = $update_stmt->execute();
 
