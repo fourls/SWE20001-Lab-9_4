@@ -38,8 +38,6 @@ html {
     display: inline-block;
     
     }
-
-}
 /* Use this nav for the menu/directory to make it look nicer and slicker*/
 nav a { text-decoration:none;
         padding:0.5em 0.6em;
@@ -54,7 +52,7 @@ nav a:hover{
 
 
 h1 { font-family:"Times New Roman",serif; font-size:64px; background:-webkit-linear-gradient(#000000, #d47237);
-    -webkit-background-clip: text;
+    /*-webkit-background-clip: text; */
     -webkit-text-fill-color: transparent;
 }
 h2 {
