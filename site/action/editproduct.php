@@ -17,7 +17,7 @@ if(!isset($_POST["product_quantity"]))
     
 $id = $_POST["product_id"];
 
-$id_exists_stmt = $conn->prepare("SELECT count(*) AS count FROM products WHERE product_id = ?");
+$id_exists_stmt = $conn->prepare("SELECT count(*) AS count FROM product WHERE product_id = ?");
 $id_exists_stmt->bind_param("i", $id);
 
 $exists_ok = $id_exists_stmt->execute();
