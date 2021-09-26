@@ -2,22 +2,6 @@
 
 require("../db.php");
 
-// Sanitise data given by the user by trimming, stripping slashes, removing HTML special characters, 
-// and escaping the string using MySQL escaping
-function sanitise($data,$conn=null) {
-    if(is_array($data)) {
-        $data = implode(",",$data);
-    }
-    
-	$data = trim($data);
-	$data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    if($conn != null) {
-        $data = $conn->real_escape_string($data);
-    }
-	return $data;
-}
-
 function fail($msg) {
     echo "<a href=\"edit.php\">".$msg."</a>";
     die();
