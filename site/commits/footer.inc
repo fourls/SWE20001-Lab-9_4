@@ -3,4 +3,4 @@
         <p>Sprint #1 - People Health Pharmacy</p>
         <p>&#169; Swinburne University of Technology</p>
         
-</footer>\
+</footer>
