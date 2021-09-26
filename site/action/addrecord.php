@@ -17,7 +17,7 @@ if(!isset($_POST["quantity"]))
     fail("Please provide a quantity.");
 
 $stmt = $conn->prepare("INSERT INTO products (product_id, product_name, description, quantity) VALUES (?,?,?,?)");
-$stmt->bind_param("sssd",$_POST["product_id"],$_POST["product_name"], $_POST["description"], $_POST["quantity"]);
+$stmt->bind_param("sssi",$_POST["product_id"],$_POST["product_name"], $_POST["description"], $_POST["quantity"]);
 
 $result = $stmt->execute();
 
