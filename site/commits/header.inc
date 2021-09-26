@@ -2,5 +2,5 @@
  <meta charset="utf-8" />
  <meta name="description" content="Pharmacy databse Site, Demonstrates some HTML5, CSS & PHP" />
  <meta name="keywords" content="HTML5,CSS, PHP" />
- <meta name="author" content="Jack Fuhrer"  />
+ <meta name="author" content="Lab9_4"  />
  <link href= "styles/style.css" rel="stylesheet"/>
