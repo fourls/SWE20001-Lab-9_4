@@ -14,10 +14,7 @@ if(!isset($_POST["description"]))
     fail("Please provide a description.");
 if(!isset($_POST["quantity"]))
     fail("Please provide a quantity.");
-
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
-
+    
 $id = $_POST["product_id"];
 
 $id_exists_stmt = $conn->prepare("SELECT count(*) AS count FROM products WHERE product_id = ?");
