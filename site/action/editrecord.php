@@ -36,6 +36,8 @@ if(!$exists_ok) {
     }
 }
 
+$id_exists_stmt->close();
+
 $update_stmt = $conn->prepare("UPDATE PRODUCTS SET product_name = ?, description = ?, quantity = ? WHERE product_id = ?");
 $update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["description"], $_POST["quantity"], id);
 
