@@ -16,7 +16,7 @@ if(!isset($_POST["quantity"]))
     fail("Please provide a quantity.");
 
 $stmt = $conn->prepare("UPDATE PRODUCTS SET product_name = ?, description = ?, quantity = ? WHERE product_id = ?");
-$stmt->bind_param("isis",$_POST["product_name"], $_POST["description"], $_POST["quantity"], $_POST["product_id"]);
+$stmt->bind_param("ssii",$_POST["product_name"], $_POST["description"], $_POST["quantity"], $_POST["product_id"]);
 
 $result = $stmt->execute();
 
