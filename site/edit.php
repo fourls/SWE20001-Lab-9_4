@@ -10,11 +10,14 @@
 
 <body>
 <h1>Edit Sales </h1>
-<form action = "editrecord.php" method = "post" >
+<form action = "action/editrecord.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
 			<p><label for="product_id">Product ID: </label> 
 				<input type="text" id="product_id" name= "product_id" placeholder="P0001" required="required"/>
+			</p>
+			<p><label for="sales_id">Sales ID: </label> 
+				<input type="text" id="sales_id" name= "sales_id" required="required" />
 			</p>
 			 			
 			<p><label for="sale_quantity">Sales Quantity: </label> 
