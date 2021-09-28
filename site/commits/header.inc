@@ -3,4 +3,4 @@
  <meta name="description" content="Pharmacy databse Site, Demonstrates some HTML5, CSS & PHP" />
  <meta name="keywords" content="HTML5,CSS, PHP" />
  <meta name="author" content="Lab9_4"  />
- <link href= "styles/style.css" rel="stylesheet"/>
+ <link href= "Styles/Style.css" rel="stylesheet"/>
