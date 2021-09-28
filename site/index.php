@@ -6,6 +6,7 @@
     <meta name="keywords" content="HTML, CSS" />
     <meta name="author" content="lab 9/ Group 4" />
     <title>People Health Pharmacy</title>
+    <link href="Styles/Style.css" rel="stylesheet" />
 
 </head>
 <style>
