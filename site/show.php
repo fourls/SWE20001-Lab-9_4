@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include 'header.inc'; ?>
+<?php include 'commits/header.inc'; ?>
     <title>Display Record</title>
 </head>
 <body>
-<?php include 'menu.inc';?>
+<?php include 'commits/menu.inc';?>
 <h2>Display Record</h2>
 <?php
  require("db.php");
@@ -46,6 +46,6 @@
     }
 ?>
 
-<?php include 'footer.inc'; ?>
+<?php include 'commits/footer.inc'; ?>
 </body>
 </html>

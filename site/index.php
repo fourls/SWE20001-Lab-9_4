@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'header.inc'; ?>
+    <?php include 'commits/header.inc'; ?>
     <title>INDEX - People Health Pharmacy</title>
 </head>
 <!--
@@ -33,7 +33,7 @@ table, th, td {
 }
 </style> -->
 <body>
-<?php include 'menu.inc';?>
+<?php include 'commits/menu.inc';?>
 
     <p> 
         <h2>People Health Pharmacy</p2>
@@ -110,6 +110,6 @@ if($conn) {
         ?>
     </p>
  
-<?php include 'footer.inc'; ?>
+<?php include 'commits/footer.inc'; ?>
 </body>
 </html>

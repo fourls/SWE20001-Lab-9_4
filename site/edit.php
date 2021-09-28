@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include 'header.inc'; ?>
+<?php include 'commits/header.inc'; ?>
  <title>Edit Sales</title>
 </head>
 <body>
-<?php include 'menu.inc';?>
+<?php include 'commits/menu.inc';?>
 <h2>Edit Sales </h2>
 <form action = "action/editrecord.php" method = "post" >
 	<fieldset>
@@ -32,6 +32,6 @@ echo "<a href='index.php'>Return Home</a>";
 ?>
 
 </form>
-<?php include 'footer.inc'; ?>
+<?php include 'commits/footer.inc'; ?>
 </body>
 </html>
