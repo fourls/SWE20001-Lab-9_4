@@ -41,7 +41,7 @@
 				<textarea class="desc" name="desc" rows="5" cols="25" placeholder="Enter description of Sale" required="required"></textarea>
 						
 			<p><label for="sale_date">Sale Date: </label> 
-				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('y/m/d');?>"/>
+				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('Y-m-d');?>" placeholder="YYYY-MM-DD"/>
 			</p>
 </fieldset>
 
