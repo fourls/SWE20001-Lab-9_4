@@ -8,7 +8,7 @@
 <?php include 'commits/menu.inc';?>
 <h2>Add Sales</h2>
 <section class ="sale">
-<form action = "add.php" method = "post" >
+<form action = "action/addrecord.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
 		<!--
