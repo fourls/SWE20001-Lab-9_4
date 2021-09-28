@@ -35,7 +35,7 @@ if(!$exists_ok) {
 $id_exists_stmt->close();
 
 $update_stmt = $conn->prepare("UPDATE sales_record SET product_id = ?, sale_quantity = ? WHERE product_id = ?");
-$update_stmt->bind_param("ii",$_POST["product_id"], $_POST["sale_quantity"], $id);
+$update_stmt->bind_param("iii",$_POST["product_id"], $_POST["sale_quantity"], $id);
 
 $update_ok = $update_stmt->execute();
 
