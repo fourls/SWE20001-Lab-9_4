@@ -1,6 +1,6 @@
 <header>
 <!-- This menu is used for easy navigation across all pages -->
-        <nav id="navbar"> 
+        <nav> 
             <p class="menu" ><a href="index.php">Home</a></p> 
             <p class="menu" ><a href="add.php">Add a sales record</a></p>
             <p class="menu" ><a href="edit.php">Edit a sales record</a></p>
