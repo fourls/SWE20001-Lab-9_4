@@ -6,9 +6,9 @@
 </head>
 <body>
 <?php include 'commits/menu.inc';?>
-<h2>Addform.php</h2>
+<h2>Add Sales</h2>
 <section class ="sale">
-<form action = "Addprocess.php" method = "post" >
+<form action = "add.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
 		<!--
@@ -19,7 +19,7 @@
 				<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
 			</p>
 
-			<p><label for="product_name">Location: </label>
+			<!-- <p><label for="product_name">Location: </label>
 				<select id="product_name" name="product_name" >
 				<option value="" selected="selected">---</option>
 					<option value="Product 1" id="0001">Product 1</option>
@@ -27,7 +27,7 @@
 					<option value="Product 3" id="0003">Product 3</option>
 					<option value="Product 4" id="0004">Product 4</option>
 				</select>
-			</p>
+			</p> -->
 
 			<p><label for="sale_quantity">Quantity: </label> 
 				<input type="number" name= "sale_quantity" id="sale_quantity" required="required" />
@@ -36,12 +36,12 @@
 			<p><label for="sale_id">Sale ID: </label> 
 				<input type="text" id="sale_id" name= "sale_id" required="required" />
 			</p> -->
-			
+<!-- 			
 			<p><label class="desc">Description: </label></p>  
 				<textarea class="desc" name="desc" rows="5" cols="25" placeholder="Enter description of Sale" required="required"></textarea>
-						
+						 -->
 			<p><label for="sale_date">Sale Date: </label> 
-				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('y/m/d');?>"/>
+				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('Y-m-d');?>" placeholder="YYYY-MM-DD"/>
 			</p>
 </fieldset>
 
