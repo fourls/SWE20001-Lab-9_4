@@ -4,9 +4,6 @@
 <?php include 'commits/header.inc'; ?>
  <title>Add Sales</title>
 </head>
-<!--
-Just copied a baseline from one of my assignments - Ryan
--->
 <body>
 <?php include 'commits/menu.inc';?>
 <h2>Addform.php</h2>
@@ -14,55 +11,37 @@ Just copied a baseline from one of my assignments - Ryan
 <form action = "Addprocess.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
-			<p><label for="product_id">Product ID: </label> 
-				<input type="text" id="product_id" name= "product_id" placeholder="P0001" required="required"/>
-			</p>
-			<p><label for="product_name">Product Name: </label> 
-				<input type="text" id="product_name" name= "product_name" required="required"/>
-			</p>
-			<p><label class="desc">Description: </label></p>  
-				<textarea class="desc" name="desc" rows="5" cols="25" required="required"></textarea>
-						
-			<p><label for="date">Closing Date: </label> 
-				<input type="text" id="date" name= "date" required="required" value="<?php echo date('d/m/y');?>"/>
+		<!--
+			Both product Id and name are required even though the id for each product would be the id(eg 0001), so you have to enter both, acts a "security measure."
+		-->
+		
+		<p><label for="product_id">Product ID: </label> 
+				<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
 			</p>
 
-			<p><label>Position: </label></p>
-			<p><label for="pos">					
-				<input type="radio" id="ftime" name="pos" value="Full Time" /> Full Time
-				</label><br>
-			<label for="pos">
-				<input type="radio" id="ptime" name="pos" value="Part Time" /> Part Time
-				</label>
-			</p>
-
-			<p><label>Contract: </label></p>
-			
-			<p>
-			<label for="contract">					
-			<input type="radio" id="contract1" name="contract" value="On-going" /> On-going</label><br>
-			<label for="contract">
-			<input type="radio" id="contract2" name="contract" value="Fixed Term" /> Fixed Term</label>
-			</p>
-
-			<p><label class="jobApp">Application by: </label></p>
-			<p>
-				<label><input type="checkbox" name="jobApp" value="Post" />Post</label><br>
-				<label><input type="checkbox" name="jobApp" value="Mail" />Mail</label>
-			</p>
-
-			<p><label for="loc">Location: </label>
-				<select id="loc" name="loc" >
+			<p><label for="product_name">Location: </label>
+				<select id="product_name" name="product_name" >
 				<option value="" selected="selected">---</option>
-					<option value="ACT" id="act">ACT</option>
-					<option value="NSW" id="nsw">NSW</option>
-					<option value="NT" id="nt">NT</option>
-					<option value="QLD" id="qld">QLD</option>
-					<option value="SA" id="sa">SA</option>
-					<option value="TAS" id="tas">TAS</option>
-					<option value="VIC" id="vic">VIC</option>
-					<option value="WA" id="wa">WA</option>
+					<option value="Product 1" id="0001">Product 1</option>
+					<option value="Product 2" id="0002">Product 2</option>
+					<option value="Product 3" id="0003">Product 3</option>
+					<option value="Product 4" id="0004">Product 4</option>
 				</select>
+			</p>
+
+			<p><label for="sale_quantity">Quantity: </label> 
+				<input type="number" name= "sale_quantity" id="sale_quantity" required="required" />
+			</p>
+			
+			<p><label for="sale_id">Sale ID: </label> 
+				<input type="text" id="sale_id" name= "sale_id" required="required" />
+			</p>
+			
+			<p><label class="desc">Description: </label></p>  
+				<textarea class="desc" name="desc" rows="5" cols="25" placeholder="Enter description of Sale" required="required"></textarea>
+						
+			<p><label for="sale_date">Sale Date: </label> 
+				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('d/m/y');?>"/>
 			</p>
 </fieldset>
 
