@@ -3,7 +3,7 @@
 require("../db.php");
 
 function fail($msg) {
-    echo "<a href=\"add.php\">".$msg."</a>";
+    echo $msg;
     die();
 }
 

@@ -15,8 +15,8 @@
 		<p><label for="product_id">Product ID: </label> 
 			<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
 		</p>
-		<p><label for="sales_id">Sales ID: </label> 
-			<input type="text" id="sales_id" name= "sales_id" required="required" />
+		<p><label for="sale_id">Sale ID: </label> 
+			<input type="text" id="sale_id" name= "sale_id" required="required" />
 		</p>
 					
 		<p><label for="sale_quantity">Sales Quantity: </label> 
