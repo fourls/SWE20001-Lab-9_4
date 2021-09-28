@@ -72,7 +72,7 @@ input[type=submit]{
     text-align: center;
     font-style: normal;
     border-radius: 5px;
-    width: 100%;
+    width: 40%;
     border: 1px solid #3ac162;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 5px;
@@ -86,7 +86,7 @@ input[type=reset]{
     text-align: center;
     font-style: normal;
     border-radius: 5px;
-    width: 100%;
+    width: 60%;
     border: 1px solid orangered;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 5px;
