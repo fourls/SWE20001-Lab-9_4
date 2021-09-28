@@ -36,7 +36,7 @@ table, th, td {
 <?php include 'commits/menu.inc';?>
 
     <p> 
-        <h2>People Health Pharmacy</p2>
+        <h2>People Health Pharmacy</h2>
         <p>
            Welcome to People Health Pharmacy, this is a local small Pharmacy in Hawthorn. We offer various medicine, health care products and accessories.
            This pharmacy is currectly really popular in Melbourne as it has ranked number one in leading pharmacies.
