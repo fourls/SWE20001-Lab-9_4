@@ -63,6 +63,16 @@ nav a:hover{
 }
 */
 
+input[type=text]{
+    width: 50%;
+    padding:12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 input[type=submit]{
     padding: 0.5em 0.6em;
@@ -72,12 +82,16 @@ input[type=submit]{
     text-align: center;
     font-style: normal;
     border-radius: 5px;
-    width: 40%;
+    width: 50%;
     border: 1px solid #3ac162;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 5px;
     display: inline-block;
 } 
+input[type=submit]:hover{
+    background-color: #1b6230;
+}
+
 input[type=reset]{
     padding: 0.5em 0.6em;
     color: #FFF;
@@ -86,11 +100,14 @@ input[type=reset]{
     text-align: center;
     font-style: normal;
     border-radius: 5px;
-    width: 60%;
+    width: 50%;
     border: 1px solid orangered;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 5px;
     display: inline-block;
+}
+input[type=reset]:hover{
+    background-color: rgb(169, 46, 5);
 }
 
 
