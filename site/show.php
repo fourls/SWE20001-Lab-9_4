@@ -7,6 +7,7 @@
 <body>
 <?php include 'commits/menu.inc';?>
 <h2>Display Record</h2>
+<section class ="sale">
 <?php
  require("db.php");
 
@@ -45,6 +46,7 @@
 		mysqli_close($conn);
     }
 ?>
+</section>
 
 <?php include 'commits/footer.inc'; ?>
 </body>

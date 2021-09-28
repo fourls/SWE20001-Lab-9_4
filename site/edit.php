@@ -7,6 +7,7 @@
 <body>
 <?php include 'commits/menu.inc';?>
 <h2>Edit Sales </h2>
+<section class ="sale">
 <form action = "action/editrecord.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
@@ -32,6 +33,7 @@ echo "<a href='index.php'>Return Home</a>";
 ?>
 
 </form>
+</section> 
 <?php include 'commits/footer.inc'; ?>
 </body>
 </html>

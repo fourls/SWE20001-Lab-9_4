@@ -67,7 +67,7 @@ table, th, td {
        customer's sales, Pre-product category sales and Pre-product sales using graphs and charts to visualise the 
    </p>
 
-<table style="width:100%">
+<table border='1' width='200px' height='auto' style="width:100%">
 <p>This website is made up of developers that will be using the scrum methodology, these team members are:</p>
 
   <tr>
