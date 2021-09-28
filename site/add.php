@@ -10,6 +10,7 @@ Just copied a baseline from one of my assignments - Ryan
 <body>
 <?php include 'commits/menu.inc';?>
 <h2>Addform.php</h2>
+<section class ="sale">
 <form action = "Addprocess.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
@@ -74,6 +75,7 @@ echo "<a href='index.php'>Return Home</a>";
 ?>
 
 </form>
+<section>
 <?php include 'commits/footer.inc'; ?>
 </body>
 </html>
