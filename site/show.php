@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+<?php include 'commits/header.inc'; ?>
     <title>Display Record</title>
 </head>
 <body>
-<h1>Display Record</h1>
+<?php include 'commits/menu.inc';?>
+<h2>Display Record</h2>
+<section class ="sale">
 <?php
- require("../db.php");
-$conn = @mysqli_connect ($host,$user,$pwd,$sql_db);	
+ require("db.php");
+
 	if (!$conn) {
         echo"<p>Database connect failure</p>";
     }
@@ -23,10 +25,10 @@ $conn = @mysqli_connect ($host,$user,$pwd,$sql_db);
         else{
         	echo "<table border=\"1\">";
 			echo "<tr>\n"
-				    ."<th scope=\"col\">sale_id</th>\n"
-			        ."<th scope=\"col\">product_id</th>\n"
-				    ."<th scope=\"col\">sale_quantity</th>\n"
-                    ."<th scope=\"col\">sale_date</th>\n"
+				    ."<th scope=\"col\">Sale ID</th>\n"
+			        ."<th scope=\"col\">Product ID</th>\n"
+				    ."<th scope=\"col\">Quantity sold</th>\n"
+                    ."<th scope=\"col\">Date sold</th>\n"
 				    ."</tr>\n";
 			// retrieve current record pointed by the result pointer
 			
@@ -41,14 +43,11 @@ $conn = @mysqli_connect ($host,$user,$pwd,$sql_db);
 			echo "</table>\n";
 			mysqli_free_result($result);
 		} 
-		echo"<p>Database connection successful.</p>";
 		mysqli_close($conn);
     }
-    echo"<p><a href='index.php'>Manage</a></p>";
-
-
 ?>
+</section>
 
-
+<?php include 'commits/footer.inc'; ?>
 </body>
 </html>
