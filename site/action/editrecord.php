@@ -34,7 +34,7 @@ if(!$exists_ok) {
 
 $id_exists_stmt->close();
 
-$update_stmt = $conn->prepare("UPDATE sales_record SET product_id = ?, sale_quantity = ? WHERE product_id = ?");
+$update_stmt = $conn->prepare("UPDATE sales_record SET product_id = ?, sale_quantity = ? WHERE sale_id = ?");
 $update_stmt->bind_param("iii",$_POST["product_id"], $_POST["sale_quantity"], $id);
 
 $update_ok = $update_stmt->execute();
@@ -42,5 +42,5 @@ $update_ok = $update_stmt->execute();
 if(!$update_ok) {
     fail("Please provide valid values.");
 } else {
-    header("Location: show.php");
+    header("Location: ../show.php");
 }

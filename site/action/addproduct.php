@@ -24,5 +24,5 @@ $result = $stmt->execute();
 if(!$result) {
     fail("Add failed - please provide valid values.");
 } else {
-    header("Location: show.php");
+    header("Location: ../show.php");
 }

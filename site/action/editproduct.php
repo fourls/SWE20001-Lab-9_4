@@ -43,5 +43,5 @@ $update_ok = $update_stmt->execute();
 if(!$update_ok) {
     fail("Please provide valid values.");
 } else {
-    header("Location: show.php");
+    header("Location: ../show.php");
 }
