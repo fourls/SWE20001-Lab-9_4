@@ -32,16 +32,16 @@
 			<p><label for="sale_quantity">Quantity: </label> 
 				<input type="number" name= "sale_quantity" id="sale_quantity" required="required" />
 			</p>
-			
+<!-- 			
 			<p><label for="sale_id">Sale ID: </label> 
 				<input type="text" id="sale_id" name= "sale_id" required="required" />
-			</p>
+			</p> -->
 			
 			<p><label class="desc">Description: </label></p>  
 				<textarea class="desc" name="desc" rows="5" cols="25" placeholder="Enter description of Sale" required="required"></textarea>
 						
 			<p><label for="sale_date">Sale Date: </label> 
-				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('d/m/y');?>"/>
+				<input type="text" id="sale_date" name= "sale_date" required="required" value="<?php echo date('y/m/d');?>"/>
 			</p>
 </fieldset>
 
