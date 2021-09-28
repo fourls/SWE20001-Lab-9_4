@@ -82,7 +82,7 @@ input[type=submit]{
 input[type=reset]{
     padding: 19px 39px 18px 39px;
     color: #FFF;
-    background-color: orange;
+    background-color: rgb(224, 77, 29);
     font-size: 18px;
     text-align: center;
     font-style: normal;
