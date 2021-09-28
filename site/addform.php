@@ -17,11 +17,11 @@ Just copied a baseline from one of my assignments - Ryan
 <form action = "Addprocess.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
-			<p><label for="posID">Position ID: </label> 
-				<input type="text" id="posID" name= "posID" placeholder="P0001" required="required"/>
+			<p><label for="product_id">Product ID: </label> 
+				<input type="text" id="product_id" name= "product_id" placeholder="P0001" required="required"/>
 			</p>
-			<p><label for="title">Title: </label> 
-				<input type="text" id="title" name= "title" required="required"/>
+			<p><label for="product_name">Product Name: </label> 
+				<input type="text" id="product_name" name= "product_name" required="required"/>
 			</p>
 			<p><label class="desc">Description: </label></p>  
 				<textarea class="desc" name="desc" rows="5" cols="25" required="required"></textarea>
