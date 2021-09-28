@@ -78,7 +78,8 @@ input[type=submit]{
     border-width: 1px 1px 3px;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 10px;
-} input[type=reset]{
+} 
+input[type=reset]{
     padding: 19px 39px 18px 39px;
     color: #FFF;
     background-color: orange;
@@ -100,7 +101,7 @@ input[type=submit]{
 
 
 
-h1 { font-family:"Times New Roman",serif; font-size:64px; background:-webkit-linear-gradient(#000000, #d47237);
+h1 { font-family:"Times New Roman",serif; font-size:64px; 
     /*-webkit-background-clip: text; */
     -webkit-text-fill-color: transparent;
 }
