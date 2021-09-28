@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="utf-8" />
- <meta name="description" content="Sprint 1" />
- <meta name="keywords" content="PHP" />
+<?php include 'header.inc'; ?>
  <title>Edit Sales</title>
 </head>
-
 <body>
-<h1>Edit Sales </h1>
+<?php include 'menu.inc';?>
+<h2>Edit Sales </h2>
 <form action = "action/editrecord.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
@@ -34,5 +32,6 @@ echo "<a href='index.php'>Return Home</a>";
 ?>
 
 </form>
+<?php include 'footer.inc'; ?>
 </body>
 </html>

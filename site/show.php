@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+<?php include 'header.inc'; ?>
     <title>Display Record</title>
 </head>
 <body>
-<h1>Display Record</h1>
+<?php include 'menu.inc';?>
+<h2>Display Record</h2>
 <?php
  require("db.php");
 
@@ -45,6 +46,6 @@
     }
 ?>
 
-
+<?php include 'footer.inc'; ?>
 </body>
 </html>
