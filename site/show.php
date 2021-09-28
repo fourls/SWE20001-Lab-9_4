@@ -7,7 +7,7 @@
 <body>
 <h1>Display Record</h1>
 <?php
- require("../db.php");
+ require("db.php");
 
 	if (!$conn) {
         echo"<p>Database connect failure</p>";
