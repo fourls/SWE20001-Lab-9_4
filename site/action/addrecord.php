@@ -12,7 +12,7 @@ if(!isset($_POST["product_id"]))
 if(!isset($_POST["sale_quantity"]))
     fail("Please provide a quantity sold.");
 
-$stmt = $conn->prepare("INSERT INTO sales_record (product_id, sale_quantity, sale_date) VALUES (?,?,?,NOW())");
+$stmt = $conn->prepare("INSERT INTO sales_record (product_id, sale_quantity, sale_date) VALUES (?,?,NOW())");
 $stmt->bind_param("ii",$_POST["product_id"], $_POST["sale_quantity"]);
 
 $result = $stmt->execute();
