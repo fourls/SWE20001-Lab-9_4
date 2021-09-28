@@ -13,7 +13,7 @@ table, th, td {
 {
     float:right;
     list-style:none;
-    margin-top: -40px;
+    margin-top: 40px;
 }
 .main-nav li
 {
