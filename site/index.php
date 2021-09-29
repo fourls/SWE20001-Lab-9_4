@@ -7,6 +7,7 @@
     <meta name="author" content="lab 9/ Group 4" />
     <title>People Health Pharmacy</title>
     <link href="Styles/Style.css" rel="stylesheet" />
+    <a href="edit.php">Go to TopicA</a> 
 
 </head>
 <style>
