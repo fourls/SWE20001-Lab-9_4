@@ -6,6 +6,23 @@
 </head>
 <body>
 <?php include 'commits/menu.inc';?>
+	<h1>Search </h1>
+<form action = "action/searchrecord.php" method = "post" >
+	<fieldset>
+		<legend>Details</legend>
+		<p><label for="product_id">Product ID: </label> 
+			<input type="text" id="product_id" name= "product_id" placeholder="Ënter Product ID to search" />
+		</p>
+		<p><label for="sale_id">Sale ID: </label> 
+			<input type="text" id="sale_id" name= "sale_id" placeholder="Ënter Product ID to search" />
+		</p>
+					
+				
+	</fieldset>
+
+	<input type = "submit" name = "posted" value = "Search">
+	<input type = "reset" value = "Reset">
+</form>
 <h2>Display Record</h2>
 <section class ="sale">
 <?php
