@@ -37,22 +37,16 @@
 		$Pid = $_GET["product_id"];
 		
 		if(isset($_GET["sale_id"]) && $_GET["sale_id"] != ""){
-<<<<<<< HEAD
-			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where sale_id";
 
-		}
-		if(isset($_GET["product_id"]) && $_GET["product_id"] != ""){
-			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where product_id";
-=======
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where sale_id like '%$Sid'";
 		}
 		if(isset($_GET["product_id"]) && $_GET["product_id"] != ""){
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where product_id like '%$Pid'";
->>>>>>> 909777d9ddae954113fb7178e186d773d3f1f5e3
+
 		}
 		
 		if($_GET["sale_id"] == "" && $_GET["product_id"] == ""){
-			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record sale_id AND product_id  ";		//Assign appropriate query here
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record";		//Assign appropriate query here
 		}
 		
 		$result = mysqli_query ($conn, $query);
