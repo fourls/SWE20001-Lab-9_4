@@ -76,6 +76,7 @@
 		mysqli_close($conn);
     }
 ?>
+
 </section>
 
 <?php include 'commits/footer.inc'; ?>
