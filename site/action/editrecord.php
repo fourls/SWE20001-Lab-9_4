@@ -6,7 +6,6 @@ function fail($msg) {
     echo "<a href=\"../edit.php\">".$msg."</a>";
     die();
 }
-
 if(!isset($_POST["sale_id"]))
     fail("Please provide a sale ID.");
 if(!isset($_POST["product_id"]))
