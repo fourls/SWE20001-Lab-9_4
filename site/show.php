@@ -7,7 +7,7 @@
 <body>
 <?php include 'commits/menu.inc';?>
 	<h1>Search </h1>
-<form action = "action/searchrecord.php" method = "post" >
+<form action = "show.php" method = "get" >
 	<fieldset>
 		<legend>Details</legend>
 		<p><label for="product_id">Product ID: </label> 
@@ -20,7 +20,7 @@
 				
 	</fieldset>
 
-	<input type = "submit" name = "posted" value = "Search">
+	<input type = "submit" name = "get" value = "Search">
 	<input type = "reset" value = "Reset">
 </form>
 <h2>Display Record</h2>
@@ -33,7 +33,20 @@
     }
     else{
 
-		$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record";		//Assign appropriate query here
+		$Sid = $_GET["sale_id"];
+		$Pid = $_GET["product_id"];
+		
+		if(isset($_GET["sale_id"]) && $_GET["sale_id"] != ""){
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where";
+		}
+		if(isset($_GET["product_id"]) && $_GET["product_id"] != ""){
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where";
+		}
+		
+		if($_GET["sale_id"] == "" && $_GET["product_id"] == ""){
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record";		//Assign appropriate query here
+		}
+		
 		$result = mysqli_query ($conn, $query);
 
 	    if (!$result) {								
