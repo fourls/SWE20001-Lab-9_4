@@ -8,7 +8,7 @@ if(!isset($_GET["date"])) {
     die();
 }
 
-$stmt = $conn->prepare("SELECT sale_id, product_id, product_name, sale_quantity, sale_date from sales_record JOIN product WHERE sale_date BETWEEN ? AND DATE_ADD(?, INTERVAL 1 MONTH) ORDER BY sale_date ASC");
+$stmt = $conn->prepare("SELECT product_name, sale_quantity, sale_date from sales_record NATURAL JOIN product WHERE sale_date BETWEEN ? AND DATE_ADD(?, INTERVAL 1 MONTH) ORDER BY sale_date ASC");
 $stmt->bind_param("ss", $start_of_month, $start_of_month);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -30,19 +30,15 @@ if (!$result) {
     echo "<table border=\"1\">";
     echo "<tr>\n"
             ."<th scope=\"col\">Date</th>\n"
-            ."<th scope=\"col\">Sale ID</th>\n"
-            ."<th scope=\"col\">Product ID</th>\n"
-            ."<th scope=\"col\">Product Name</th>\n"
-            ."<th scope=\"col\">Quantity sold</th>\n"
+            ."<th scope=\"col\">Product</th>\n"
+            ."<th scope=\"col\">Quantity</th>\n"
             ."</tr>\n";
     // retrieve current record pointed by the result pointer
     
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>",$row["sale_date"],"</td>\n";
-        echo "<td>",$row["sale_id"],"</td>\n";
-        echo "<td>",$row["product_id"],"</td>\n";
-        echo "<td>",$row["product_name"],"</td>\n";    
+        echo "<td>",$row["product_name"]," (",$row["product_id"],")</td>\n";
         echo "<td>",$row["sale_quantity"],"</td>\n";
         echo "</tr>";
     }
