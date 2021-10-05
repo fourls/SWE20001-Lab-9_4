@@ -8,7 +8,7 @@ if(!isset($_GET["date"])) {
     die();
 }
 
-$stmt = $conn->prepare("SELECT product_name, sale_quantity, sale_date from sales_record NATURAL JOIN product WHERE sale_date BETWEEN ? AND DATE_ADD(?, INTERVAL 1 MONTH) ORDER BY sale_date ASC");
+$stmt = $conn->prepare("SELECT product_name, product_id, sale_quantity, sale_date from sales_record NATURAL JOIN product WHERE sale_date BETWEEN ? AND DATE_ADD(?, INTERVAL 1 MONTH) ORDER BY sale_date ASC");
 $stmt->bind_param("ss", $start_of_month, $start_of_month);
 $stmt->execute();
 $result = $stmt->get_result();
