@@ -22,15 +22,15 @@ class SalesRecord {
 class SalesReport {
     public string $report_name;
     public DateTime $start_date;
-    public DateTime $end_date;
     public array $sales_records;
+    public int $report_type;
     public string $message;
     
     static function generate(string $report_name, DateTime $start_date, int $report_type): SalesReport|null {
         $report = new SalesReport();
         $report->report_name = $report_name;
         $report->start_date = $start_date;
-        $report->end_date = $end_date;
+        $report->report_type = $report_type;
         $report->sales_records = [];
 
         require("../db.php");
