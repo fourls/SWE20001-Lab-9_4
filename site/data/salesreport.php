@@ -58,10 +58,9 @@ class SalesReport {
         while ($row = $result->fetch_assoc()) {
             $report->sales_records[] = new SalesRecord(
                 $row["sale_id"], 
-                $row["product_name"], 
                 $row["product_id"], 
+                $row["product_name"], 
                 $row["sale_quantity"], 
-                $row["sale_date"],
                 new DateTime($row["sale_date"])
             );
         }
