@@ -40,7 +40,7 @@ if (!empty($report->message)) {
 
     foreach ($report->sales_records as $row) {
         echo "<tr>";
-        echo "<td>",$row->sale_date,"</td>\n";
+        echo "<td>",$row->sale_date->format("d/m/Y"),"</td>\n";
         echo "<td>",$row->product_name,"(",$row->product_id,")</td>\n";
         echo "<td>",$row->sale_quantity,"</td>\n";
         echo "</tr>";
