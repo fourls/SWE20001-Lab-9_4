@@ -9,6 +9,9 @@ if(!isset($_GET["date"])) {
     die();
 }
 
+header("Content-Type: text/csv; charset=utf-8");
+header("Content-Disposition: attachment; filename=report.csv");
+
 $report = SalesReport::generate(
     $conn,
     "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
