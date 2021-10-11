@@ -26,7 +26,7 @@ class SalesReport {
     public array $sales_records;
     public string $message;
     
-    function generate(string $report_name, DateTime $start_date, int $report_type): SalesReport|null {
+    static function generate(string $report_name, DateTime $start_date, int $report_type): SalesReport|null {
         $report = new SalesReport();
         $report->report_name = $report_name;
         $report->start_date = $start_date;
