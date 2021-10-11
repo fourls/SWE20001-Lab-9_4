@@ -48,8 +48,10 @@ class SalesReport {
             return $report;
         }
         
+        $date_str = $start_date->format("Y-m-d");
+
         $stmt = $conn->prepare("SELECT sale_id, product_name, product_id, sale_quantity, sale_date from sales_record NATURAL JOIN product WHERE sale_date BETWEEN ? AND DATE_ADD(?, INTERVAL ".$sql_interval.") ORDER BY sale_date ASC");
-        $stmt->bind_param("ss", $start_date->format("Y-m-d"), $end_date->format("Y-m-d"));
+        $stmt->bind_param("ss", $date_str, $date_str);
         $stmt->execute();
         $result = $stmt->get_result();
         

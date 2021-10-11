@@ -12,7 +12,7 @@ if(!isset($_GET["date"])) {
 $report = SalesReport::generate(
     $conn,
     "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
-    new DateTime($start_of_month),
+    DateTime::createFromFormat("Y-m-d", $start_of_month),
     SALES_REPORT_MONTHLY
 );
 
