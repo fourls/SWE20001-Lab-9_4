@@ -33,8 +33,7 @@ class SalesReport {
         $report->report_type = $report_type;
         $report->sales_records = [];
 
-        require("../db.php");
-        
+        require(dirname(__FILE__) . "../db.php");
 
         if(!$conn) {
             $report->message = "Could not connect to database";
