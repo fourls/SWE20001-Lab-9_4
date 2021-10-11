@@ -1,4 +1,5 @@
 <?php
+require("db.php");
 require("data/salesreport.php");
 
 $start_of_month = $_GET["date"];
@@ -9,6 +10,7 @@ if(!isset($_GET["date"])) {
 }
 
 $report = SalesReport::generate(
+    $conn,
     "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
     new DateTime($start_of_month),
     SALES_REPORT_MONTHLY

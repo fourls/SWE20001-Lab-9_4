@@ -26,14 +26,12 @@ class SalesReport {
     public int $report_type;
     public string $message;
     
-    static function generate(string $report_name, DateTime $start_date, int $report_type): SalesReport|null {
+    static function generate(mysqli $conn, string $report_name, DateTime $start_date, int $report_type): SalesReport|null {
         $report = new SalesReport();
         $report->report_name = $report_name;
         $report->start_date = $start_date;
         $report->report_type = $report_type;
         $report->sales_records = [];
-
-        require(dirname(__FILE__) . "../db.php");
 
         if(!$conn) {
             $report->message = "Could not connect to database";
