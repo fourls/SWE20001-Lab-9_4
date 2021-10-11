@@ -47,8 +47,6 @@ if (!empty($report->message)) {
     }
     echo "</table>\n";
 }
-
-$conn->close();
 ?>
 
 </section>
