@@ -1,7 +1,24 @@
 <?php
+require("db.php");
+require("data/salesreport.php");
+
+$start_of_month = $_GET["date"];
+
+if(!isset($_GET["date"])) {
+    header("Location: index.php");
+    die();
+}
+
+$report = SalesReport::generate(
+    $conn,
+    "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+    DateTime::createFromFormat("Y-m-d", $start_of_month),
+    SALES_REPORT_MONTHLY
+);
 
 $out = fopen("php://output", "w");
 
+fputcsv($out, [$report->report_name, $report->start_date->format("d/m/Y")]);
 fputcsv($out, ["Sale ID", "Sale Date", "Product Name", "Product ID", "Sale Quantity"]);
 
 foreach ($report->sales_records as $record) {
@@ -14,3 +31,4 @@ foreach ($report->sales_records as $record) {
     fputcsv($out, $row);
 }
 
+fclose($out);
