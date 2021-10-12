@@ -38,10 +38,10 @@
 		
 		if(isset($_GET["sale_id"]) && $_GET["sale_id"] != ""){
 
-			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where sale_id like '%$Sid'";
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where sale_id = '$Sid'";
 		}
 		if(isset($_GET["product_id"]) && $_GET["product_id"] != ""){
-			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where product_id like '%$Pid'";
+			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where product_id = '$Pid'";
 
 		}
 		
