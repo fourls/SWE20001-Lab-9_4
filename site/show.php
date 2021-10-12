@@ -33,8 +33,8 @@
     }
     else{
 
-		$Sid = isset($_GET["sale_id"]);
-		$Pid = isset($_GET["product_id"]);
+		$Sid = $_GET["sale_id"];
+		$Pid = $_GET["product_id"];
 		
 		if(isset($_GET["sale_id"]) && $_GET["sale_id"] != ""){
 
@@ -45,7 +45,7 @@
 
 		}
 		
-		if(isset($_GET["sale_id"]) == "" && isset($_GET["product_id"]) == ""){
+		if($_GET["sale_id"] == "" && $_GET["product_id"] == ""){
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record";		//Assign appropriate query here
 		}
 		
