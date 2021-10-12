@@ -33,19 +33,19 @@
     }
     else{
 
-		$Sid = $_GET["sale_id"];
-		$Pid = $_GET["product_id"];
+		$Sid = isset($_GET["sale_id"]);
+		$Pid = isset($_GET["product_id"]);
 		
-		if(isset($_GET["sale_id"]) && $_GET["sale_id"] != ""){
+		if($Sid != ""){
 
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where sale_id = '$Sid'";
 		}
-		if(isset($_GET["product_id"]) && $_GET["product_id"] != ""){
+		if($Pid != ""){
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record where product_id = '$Pid'";
 
 		}
 		
-		if($_GET["sale_id"] == "" && $_GET["product_id"] == ""){
+		if($Sid == "" && $Pid == ""){
 			$query = "select sale_id, product_id, sale_quantity, sale_date from sales_record";		//Assign appropriate query here
 		}
 		
