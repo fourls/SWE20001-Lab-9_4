@@ -2,17 +2,25 @@
 require("db.php");
 require("data/salesreport.php");
 
+// get the start date from the URL (?date=....)
 $start_of_month = $_GET["date"];
 
+// if there isn't a ?date in the URL, then return to front page
+// maybe change later
 if(!isset($_GET["date"])) {
     header("Location: index.php");
     die();
 }
 
+// generate the report (see salesreport.php for more)
 $report = SalesReport::generate(
+    // the MySQL connection
     $conn,
+    // the title of the sales report
     "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+    // the start date of the report
     DateTime::createFromFormat("Y-m-d", $start_of_month),
+    // whether the sales report is monthly
     SALES_REPORT_MONTHLY
 );
 
@@ -27,6 +35,7 @@ $report = SalesReport::generate(
 <h2><?php echo $report->report_name ?></h2>
 <section class ="sale">
 <?php
+// if there is an error message in the report, echo it
 if (!empty($report->message)) {								
     echo "<p>".$report->message."</p>";
 } else {
@@ -36,8 +45,8 @@ if (!empty($report->message)) {
             ."<th scope=\"col\">Product</th>\n"
             ."<th scope=\"col\">Quantity</th>\n"
             ."</tr>\n";
-    // retrieve current record pointed by the result pointer
 
+    // go through all sales records and echo each row to the page
     foreach ($report->sales_records as $row) {
         echo "<tr>";
         echo "<td>",$row->sale_date->format("d/m/Y"),"</td>\n";
