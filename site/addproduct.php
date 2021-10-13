@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php include 'commits/menu.inc';?>
-<h2>Edit Product </h2>
+<h2>Add Product </h2>
 <section class ="product">
 <form action = "action/addproduct.php" method = "post" >
 	<fieldset>
