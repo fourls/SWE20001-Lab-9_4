@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <meta charset="utf-8" />
     <meta name="description" content="Managing Software projects" />
     <meta name="keywords" content="HTML, CSS" />
@@ -9,7 +10,12 @@
     <link href="Styles/Style.css" rel="stylesheet" />
     <a href="edit.php">Go to TopicA</a> 
 
+=======
+    <?php include 'commits/header.inc'; ?>
+    <title>INDEX - People Health Pharmacy</title>
+>>>>>>> origin
 </head>
+<!--
 <style>
 table, th, td {
   border:1px solid black;
@@ -18,7 +24,7 @@ table, th, td {
 {
     float:right;
     list-style:none;
-    margin-top: -40px;
+    margin-top: 40px;
 }
 .main-nav li
 {
@@ -36,21 +42,12 @@ table, th, td {
 {
     border:1px solid black;
 }
-
-</style>
-
+</style> -->
 <body>
-<div>
-            <ul class="main-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="addform.php">Add product</a></li>
-                <li><a href="edit.php">Edit record</a></li>
-                <li><a href="show.php">Show product</a></li>
-            </ul>
-        </div>
+<?php include 'commits/menu.inc';?>
 
     <p> 
-        <h2>People Health Pharmacy</p2>
+        <h2>People Health Pharmacy</h2>
         <p>
            Welcome to People Health Pharmacy, this is a local small Pharmacy in Hawthorn. We offer various medicine, health care products and accessories.
            This pharmacy is currectly really popular in Melbourne as it has ranked number one in leading pharmacies.
@@ -81,12 +78,7 @@ table, th, td {
        customer's sales, Pre-product category sales and Pre-product sales using graphs and charts to visualise the 
    </p>
 
-
-
-
-
-
-<table style="width:100%">
+<table border='1' width='200px' height='auto' style="width:100%">
 <p>This website is made up of developers that will be using the scrum methodology, these team members are:</p>
 
   <tr>
@@ -116,7 +108,6 @@ table, th, td {
  </tr>
 </table>
         <br/>
-        Jack.
         <?php echo "Hello from PHP ".phpversion()."!"; ?>
         <br/>
         <?php
@@ -130,6 +121,6 @@ if($conn) {
         ?>
     </p>
  
-
+<?php include 'commits/footer.inc'; ?>
 </body>
 </html>
