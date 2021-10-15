@@ -33,6 +33,7 @@ echo "<a href='index.php'>Return Home</a>";
 ?>
 
 </form>
+<button type="button">Delete!</button>
 </section> 
 <?php include 'commits/footer.inc'; ?>
 </body>
