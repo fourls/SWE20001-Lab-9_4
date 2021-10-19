@@ -2,6 +2,11 @@
 require("db.php");
 require("data/salesreport.php");
 
+function fail($msg) {
+    echo $msg . " <a href=\"/displaymonthly.php\">Return</a>";
+    die();
+}
+
 // get the start date from the URL (?date=....)
 
 $show_report = isset($_GET["date"]);
@@ -10,6 +15,12 @@ if($show_report) {
     $start_of_month = $_GET["date"];
     $report_type = $_GET["report_type"] == "weekly" ? SALES_REPORT_WEEKLY : SALES_REPORT_MONTHLY;
 
+    $start_date = new DateTime($start_of_month);
+
+    if(!$start_date) {
+        fail("Please write the date in the format d/m/Y.");
+    }
+
     // generate the report (see salesreport.php for more)
     $report = SalesReport::generate(
         // the MySQL connection
@@ -17,7 +28,7 @@ if($show_report) {
         // the title of the sales report
         "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
         // the start date of the report
-        DateTime::createFromFormat("Y-m-d", $start_of_month),
+        $start_date,
         // whether the sales report is monthly
         $report_type
     );
@@ -77,8 +88,9 @@ if (!empty($report->message)) {
 	<fieldset>
 		<legend>Details</legend>
 		<p>
-            <label for="date">Starting date: </label> 
-			<input type="text" id="date" name= "date" placeholder="YYYY-MM-DD" />
+            <label for="date">Starting date (dd/mm/yyyy): </label> 
+			<input type="text" id="date" name= "date" placeholder="dd/mm/yyyy" />
+            <br/>
             <label for="report_type">Scale of report: </label> 
             <select name="report_type" id="report_type">
                 <option value="monthly">Monthly</option>
