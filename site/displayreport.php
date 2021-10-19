@@ -15,7 +15,7 @@ if($show_report) {
     $start_of_month = $_GET["date"];
     $report_type = $_GET["report_type"] == "weekly" ? SALES_REPORT_WEEKLY : SALES_REPORT_MONTHLY;
 
-    $start_date = new DateTime($start_of_month);
+    $start_date = DateTime::createFromFormat("d/m/Y", $start_of_month);
 
     if(!$start_date) {
         fail("Please write the date in the format d/m/Y.");
@@ -26,7 +26,7 @@ if($show_report) {
         // the MySQL connection
         $conn,
         // the title of the sales report
-        "PHP-SRePS sales for the ".($report_type == SALES_REPORT_WEEKLY ? "week" : "month")." beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+        "PHP-SRePS sales for the ".($report_type == SALES_REPORT_WEEKLY ? "week" : "month")." beginning " . date_format($start_date, "d/m/Y"),
         // the start date of the report
         $start_date,
         // whether the sales report is monthly
