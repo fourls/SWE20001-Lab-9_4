@@ -25,7 +25,7 @@
 			<input type="number" id="product_quantity" name= "product_quantity" required="required" />
 		</p>	
 		<p><label for="product_price">New product price: </label> 
-			<input type="number" id="product_price" name= "product_price" required="required" />
+			<input type="number" id="product_price" name= "product_price" required="required" step=".01" />
 		</p>					
 	</fieldset>
 

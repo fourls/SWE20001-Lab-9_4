@@ -18,7 +18,7 @@ if(!isset($_POST["product_quantity"]))
 if(!isset($_POST["product_price"]))
     fail("Please provide a price.");
 
-$stmt = $conn->prepare("INSERT INTO product (product_id, product_name, product_description, product_quantity, product_price) VALUES (?,?,?,?,?)");
+$stmt = $conn->prepare("INSERT INTO product (product_id, product_name, product_desc, product_quantity, product_price) VALUES (?,?,?,?,?)");
 $stmt->bind_param("issid",$_POST["product_id"],$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $_POST["product_price"]);
 
 $result = $stmt->execute();
