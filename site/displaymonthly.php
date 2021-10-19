@@ -3,26 +3,25 @@ require("db.php");
 require("data/salesreport.php");
 
 // get the start date from the URL (?date=....)
-$start_of_month = $_GET["date"];
 
-// if there isn't a ?date in the URL, then return to front page
-// maybe change later
-if(!isset($_GET["date"])) {
-    header("Location: index.php");
-    die();
-}
+$show_report = isset($_GET["date"]);
 
-// generate the report (see salesreport.php for more)
-$report = SalesReport::generate(
-    // the MySQL connection
-    $conn,
-    // the title of the sales report
-    "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
-    // the start date of the report
-    DateTime::createFromFormat("Y-m-d", $start_of_month),
-    // whether the sales report is monthly
-    SALES_REPORT_MONTHLY
-);
+if($show_report) {
+    $start_of_month = $_GET["date"];
+    $report_type = $_GET["report_type"] == "weekly" ? SALES_REPORT_WEEKLY : SALES_REPORT_MONTHLY;
+
+    // generate the report (see salesreport.php for more)
+    $report = SalesReport::generate(
+        // the MySQL connection
+        $conn,
+        // the title of the sales report
+        "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+        // the start date of the report
+        DateTime::createFromFormat("Y-m-d", $start_of_month),
+        // whether the sales report is monthly
+        $report_type
+    );
+
 
 ?>
 <!DOCTYPE html>
@@ -31,6 +30,7 @@ $report = SalesReport::generate(
     <title>PHP-SRePS Sales Report</title>
 </head>
 <body>
+<a href="/displaymonthly.php">Return to site</a>
 <h1>PHP-SRePS Sales Report</h1>
 <h2><?php echo $report->report_name ?></h2>
 <section class ="sale">
@@ -61,3 +61,37 @@ if (!empty($report->message)) {
 </section>
 </body>
 </html>
+
+<?php
+} else { ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include 'commits/header.inc'; ?>
+    <title>PHP-SRePS Sales Report Generation</title>
+</head>
+<body>
+<?php include 'commits/menu.inc';?>
+<h1>Generate a PHP-SRePS sales report</h1>
+<form action = "" method = "get" >
+	<fieldset>
+		<legend>Details</legend>
+		<p>
+            <label for="date">Starting date: </label> 
+			<input type="text" id="date" name= "date" placeholder="YYYY-MM-DD" />
+            <label for="report_type">Scale of report: </label> 
+            <select name="report_type" id="report_type">
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+            </select>
+		</p>
+	</fieldset>
+
+	<input type = "submit" name = "get" value = "Generate">
+	<input type = "reset" value = "Reset">
+</form>
+<?php include 'commits/footer.inc'; ?>
+</body>
+</html>
+<?php
+}
