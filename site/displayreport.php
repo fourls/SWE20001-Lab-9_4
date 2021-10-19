@@ -3,7 +3,7 @@ require("db.php");
 require("data/salesreport.php");
 
 function fail($msg) {
-    echo $msg . " <a href=\"/displaymonthly.php\">Return</a>";
+    echo $msg . " <a href=\"/displayreport.php\">Return</a>";
     die();
 }
 
@@ -41,7 +41,8 @@ if($show_report) {
     <title>PHP-SRePS Sales Report</title>
 </head>
 <body>
-<a href="/displaymonthly.php">Return to site</a>
+<a href="/displayreport.php">Return to site</a> |
+<a href="/csvreport.php?date=<?php echo $start_of_month ?>&report_type=<?php echo $report_type ?>">Download as CSV</a>
 <h1>PHP-SRePS Sales Report</h1>
 <h2><?php echo $report->report_name ?></h2>
 <section class ="sale">
@@ -83,7 +84,7 @@ if (!empty($report->message)) {
 </head>
 <body>
 <?php include 'commits/menu.inc';?>
-<h1>Generate a PHP-SRePS sales report</h1>
+<h2>Generate a PHP-SRePS sales report</h2>
 <form action = "" method = "get" >
 	<fieldset>
 		<legend>Details</legend>

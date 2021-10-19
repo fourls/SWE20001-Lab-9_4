@@ -4,11 +4,12 @@ require("data/salesreport.php");
 
 // get the start date from the URL (?date=....)
 $start_of_month = $_GET["date"];
+$report_type = $_GET["report_type"] == "weekly" ? SALES_REPORT_WEEKLY : SALES_REPORT_MONTHLY;
 
 // if there isn't a ?date in the URL, then return to front page
 // maybe change later
 if(!isset($_GET["date"])) {
-    header("Location: index.php");
+    header("Location: displayreport.php");
     die();
 }
 
@@ -21,11 +22,11 @@ $report = SalesReport::generate(
     // the MySQL connection
     $conn,
     // the title of the sales report
-    "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+    "PHP-SRePS sales for the ".($report_type == SALES_REPORT_WEEKLY ? "week" : "month")." beginning " . date_format(date_create($start_of_month), "d/m/Y"),
     // the start date of the report
-    DateTime::createFromFormat("Y-m-d", $start_of_month),
+    DateTime::createFromFormat("d/m/Y", $start_of_month),
     // whether the sales report is monthly
-    SALES_REPORT_MONTHLY
+    $report_type
 );
 
 // open the webpage being built rn as a file stream (??? why does PHP let you do this)
