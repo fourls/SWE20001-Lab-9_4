@@ -44,7 +44,7 @@ $id_exists_stmt->close();
 // prepare the update statement - see salesreport.php for link on prepared statements
 $update_stmt = $conn->prepare("UPDATE product SET product_name = ?, product_desc = ?, product_quantity = ?, product_price = ? WHERE product_id = ?");
 // bind the params
-$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $_POST["product_price"], $id);
+$update_stmt->bind_param("ssidi",$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $_POST["product_price"], $id);
 // execute the statement
 $update_ok = $update_stmt->execute();
 
