@@ -26,7 +26,7 @@ if($show_report) {
         // the MySQL connection
         $conn,
         // the title of the sales report
-        "PHP-SRePS sales for the month beginning " . date_format(date_create($start_of_month), "d/m/Y"),
+        "PHP-SRePS sales for the ".($report_type == SALES_REPORT_WEEKLY ? "week" : "month")." beginning " . date_format(date_create($start_of_month), "d/m/Y"),
         // the start date of the report
         $start_date,
         // whether the sales report is monthly
