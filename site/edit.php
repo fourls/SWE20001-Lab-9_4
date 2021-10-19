@@ -10,15 +10,16 @@
 <section class ="sale">
 <form action = "action/editrecord.php" method = "post" >
 	<fieldset>
-		<legend>Details</legend>
-		<p><label for="product_id">Product ID: </label> 
-			<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
-		</p>
-		<p><label for="sale_id">Sale ID: </label> 
+		<p><label for="sale_id">Sale ID to edit: </label> 
 			<input type="text" id="sale_id" name= "sale_id" required="required" />
 		</p>
+
+		<legend>Details</legend>
+		<p><label for="product_id">New product ID: </label> 
+			<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
+		</p>
 					
-		<p><label for="sale_quantity">Sales Quantity: </label> 
+		<p><label for="sale_quantity">New sales quantity: </label> 
 			<input type="number" id="sale_quantity" name= "sale_quantity" required="required" />
 		</p>			
 	</fieldset>

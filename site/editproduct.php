@@ -11,19 +11,22 @@
 <form action = "action/editproduct.php" method = "post" >
 	<fieldset>
 		<legend>Details</legend>
-		<p><label for="product_id">Product ID: </label> 
+		<p><label for="product_id">Product ID to edit: </label> 
 			<input type="text" id="product_id" name= "product_id" placeholder="0001" required="required"/>
 		</p>
-		<p><label for="product_name">Product name: </label> 
+		<p><label for="product_name">New product name: </label> 
 			<input type="text" id="product_name" name= "product_name" required="required" />
 		</p>
 			
-        <p><label class="product_description">Description: </label></p>  
+        <p><label class="product_description">New description: </label></p>  
 			<textarea class="product_description" id="product_description" name="product_description" rows="5" cols="25" placeholder="Enter description of product" required="required"></textarea>
 
-		<p><label for="product_quantity">Product Quantity: </label> 
+		<p><label for="product_quantity">New product quantity: </label> 
 			<input type="number" id="product_quantity" name= "product_quantity" required="required" />
-		</p>			
+		</p>	
+		<p><label for="product_price">New product price: </label> 
+			<input type="number" id="product_price" name= "product_price" required="required" />
+		</p>					
 	</fieldset>
 
 	<input type = "submit" name = "posted" value = "Post">

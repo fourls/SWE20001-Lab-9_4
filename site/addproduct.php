@@ -24,6 +24,9 @@
 		<p><label for="product_quantity">Product Quantity: </label> 
 			<input type="number" id="product_quantity" name= "product_quantity" required="required" />
 		</p>			
+		<p><label for="product_price">Product Price: </label> 
+			<input type="number" id="product_price" name= "product_price" required="required" />
+		</p>			
 	</fieldset>
 
 	<input type = "submit" name = "posted" value = "Post">

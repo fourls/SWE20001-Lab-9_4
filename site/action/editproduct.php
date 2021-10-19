@@ -16,6 +16,8 @@ if(!isset($_POST["product_description"]))
     fail("Please provide a product description.");
 if(!isset($_POST["product_quantity"]))
     fail("Please provide a product quantity.");
+if(!isset($_POST["product_price"]))
+    fail("Please provide a product price.");
 
 // Check if the product ID already exists or not - it needs to
 $id = $_POST["product_id"];
@@ -40,9 +42,9 @@ if(!$exists_ok) {
 $id_exists_stmt->close();
 
 // prepare the update statement - see salesreport.php for link on prepared statements
-$update_stmt = $conn->prepare("UPDATE product SET product_name = ?, product_description = ?, product_quantity = ? WHERE product_id = ?");
+$update_stmt = $conn->prepare("UPDATE product SET product_name = ?, product_description = ?, product_quantity = ?, product_price = ? WHERE product_id = ?");
 // bind the params
-$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $id);
+$update_stmt->bind_param("ssii",$_POST["product_name"], $_POST["product_description"], $_POST["product_quantity"], $_POST["product_price"], $id);
 // execute the statement
 $update_ok = $update_stmt->execute();
 
